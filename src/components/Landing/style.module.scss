@@ -1,30 +1,89 @@
 .landing {
-  display: flex;
-  flex-direction: column;
-  gap: 10vh;
-  justify-content: center;
-  align-items: center;
+  position: relative;
   height: 100vh;
   width: 100vw;
+  overflow: hidden;
   background-color: #0f0f0f;
+
   .model {
-    pointer-events: none;
-    position: sticky;
+    position: absolute;
     top: 0;
-    z-index: 50;
-    margin-top: -100vh;
-    overflow: hidden;
-    height: 100vh;
+    left: 0;
     width: 100vw;
-    display: block;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 1;
   }
-  .header {
-    margin-top: 20vh;
-    font-size: 13rem;
-    font-weight: 500;
+
+  .headings {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+    width: max-content;
+    z-index: 2;
+
+    .headingSection {
+      display: grid;
+      place-items: center;
+      width: 100vw;
+      height: 100vh;
+      flex-shrink: 0;
+
+      h1 {
+        font-size: 10rem;
+        font-weight: 500;
+        color: white;
+        text-align: center;
+      }
+      h2 {
+        font-size: 2rem;
+        font-weight: 300;
+        color: white;
+      }
+      .info {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+
+        .markers {
+          display: flex;
+          flex-direction: row;
+          gap: 0;
+          .divider {
+            height: 2px;
+            width: 500px;
+            background-color: white;
+
+            .circle {
+              height: 2px;
+              width: 2px;
+              border-radius: 50%;
+              background-color: white;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .overlayText {
+    position: absolute;
+    bottom: 20vh;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    color: white;
+    text-align: center;
   }
 
   .button {
-    z-index: 10000;
+    position: absolute;
+    bottom: 8vh;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
   }
 }
