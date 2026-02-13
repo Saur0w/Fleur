@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "@/components/Header/index";
 import Footer from "@/components/Footer/index";
 import React from "react";
+import ViewCanvas from "@/components/Canvas/Scene";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -33,6 +34,7 @@ export default function RootLayout({
       <Header />
       <main>
           {children}
+          <ViewCanvas />
       </main>
       <Footer />
       </body>

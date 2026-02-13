@@ -38,7 +38,7 @@ export default function Text({ children, className = "" }: TextProps) {
             stagger: 0.03,
             scrollTrigger: {
                 trigger: containerRef.current,
-                start: "top 85%",
+                start: "top 90%",
             },
         });
 
