@@ -1,0 +1,32 @@
+.header {
+  font-size: 1.2rem;
+  .nav {
+    z-index: 10000;
+  }
+  .el {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 10000;
+    padding: 15px;
+    cursor: pointer;
+    &:hover {
+      .indicator {
+        transform: scale(1);
+        background-color: #fdfdfd;
+      }
+    }
+
+    .indicator {
+      position: absolute;
+      width: 5px;
+      height: 5px;
+      top: 45px;
+      left: 50%;
+      background-color: transparent;
+      border-radius: 50%;
+      transform: scale(0) translateX(-50%);
+      transition: transform 0.2s cubic-bezier(0.76, 0, 0.24, 1);
+    }
+  }
+}

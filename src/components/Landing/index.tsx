@@ -6,6 +6,8 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { useRef } from "react";
 import Text from "@/ui/Text/index";
+import { View } from "@react-three/drei";
+import Scene from "./Scene";
 
 gsap.registerPlugin(useGSAP);
 
@@ -34,6 +36,9 @@ export default function Landing() {
 
     return (
         <section className={styles.landing} ref={landingRef}>
+            <View className={styles.model}>
+                <Scene />
+            </View>
             <div ref={headRef} className="opacity-0">
                 <h1 className={styles.header} ref={headerRef}>Own the Moment</h1>
             </div>
