@@ -8,8 +8,9 @@ import { useRef } from "react";
 import { Group } from "three";
 import {useGSAP} from "@gsap/react";
 import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-gsap.registerPlugin(useGSAP);
+gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 export default function Scene() {
     const modelRef = useRef<Group>(null);
@@ -20,9 +21,30 @@ export default function Scene() {
     useGSAP(() => {
         if (!modelRef.current || !perfumeRef.current || !serumRef.current) return;
 
-        gsap.set(serumRef.current.position, {
-            y: -5,
+        gsap.set(perfumeRef.current.position, {
+            y: 1.2,
+            x: 0
         });
+
+        gsap.set(serumRef.current.position, {
+            y: -2,
+            x: 1
+        });
+
+        const introTl = gsap.timeline({
+            defaults: {
+                duration: 3, ease: "back.out(1.4)"
+            }
+        });
+
+        introTl
+            .from(perfumeRef.current.position, {
+                y: -5,
+                x: 1
+            }, 0)
+            .from(perfumeRef.current.position, {
+                z: 3
+            }, 0);
     }, { scope: modelRef });
     return (
         <group>

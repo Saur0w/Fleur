@@ -11,10 +11,9 @@ export default function Model() {
     return (
         <primitive
             object={scene}
-            scale={0.02}
+            scale={0.009}
             position={[0, 0, 0]}
             rotation={[0, 0, -0.2]}
-
         />
     )
 }
