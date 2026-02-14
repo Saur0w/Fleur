@@ -16,28 +16,8 @@ export default function Landing() {
     const landingRef = useRef<HTMLDivElement>(null);
     const trackRef = useRef<HTMLDivElement>(null);
 
-    useGSAP(() => {
-        const track = trackRef.current;
-        if (!track) return;
-
-        const sections = gsap.utils.toArray(`.${styles.headingSection}`);
-
-        gsap.to(track, {
-            xPercent: -100 * (sections.length - 1),
-            ease: "none",
-            scrollTrigger: {
-                trigger: landingRef.current,
-                pin: true,
-                scrub: 1,
-                end: "+=150%",
-            }
-        });
-
-    }, { scope: landingRef });
-
     return (
         <section className={styles.landing} ref={landingRef}>
-
             <View className={styles.model}>
                 <Scene />
             </View>
@@ -45,20 +25,6 @@ export default function Landing() {
             <div className={styles.headings} ref={trackRef}>
                 <div className={styles.headingSection}>
                     <h1>Own the Moment</h1>
-                </div>
-                <div className={styles.headingSection}>
-                    <h1>Find Your Signature.</h1>
-                </div>
-                <div className={styles.headingSection}>
-                    <div className={styles.info}>
-                        <div className={styles.text}>
-                            <h2>Fragrance</h2>
-                        </div>
-                        <div className={styles.markers}>
-                            <div className={styles.divider}></div>
-                            <div className={styles.circle}></div>
-                        </div>
-                    </div>
                 </div>
             </div>
 

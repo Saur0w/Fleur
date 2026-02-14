@@ -1,6 +1,7 @@
 "use client";
 
 import Model from "@/components/Canvas/Model";
+import Serum from "@/components/Canvas/Serum";
 import { Environment } from "@react-three/drei";
 import { Float } from "@react-three/drei";
 import { useRef } from "react";
@@ -13,6 +14,7 @@ export default function Scene() {
         <group>
             <Float ref={modelRef} floatIntensity={0.2}>
                 <Model />
+                <Serum />
             </Float>
             <Environment preset="dawn" />
             <ambientLight />

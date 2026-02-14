@@ -38,34 +38,6 @@
         color: white;
         text-align: center;
       }
-      h2 {
-        font-size: 2rem;
-        font-weight: 300;
-        color: white;
-      }
-      .info {
-        display: flex;
-        flex-direction: row;
-        gap: 10px;
-
-        .markers {
-          display: flex;
-          flex-direction: row;
-          gap: 0;
-          .divider {
-            height: 2px;
-            width: 500px;
-            background-color: white;
-
-            .circle {
-              height: 2px;
-              width: 2px;
-              border-radius: 50%;
-              background-color: white;
-            }
-          }
-        }
-      }
     }
   }
 
@@ -84,6 +56,6 @@
     bottom: 8vh;
     left: 50%;
     transform: translateX(-50%);
-    z-index: 10;
+    z-index: 10000;
   }
 }

@@ -1,6 +1,7 @@
 .header {
   position: absolute;
   font-size: 1.2rem;
+  z-index: 10000;
   .nav {
     z-index: 10000;
   }
